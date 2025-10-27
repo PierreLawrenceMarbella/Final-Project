@@ -7,7 +7,7 @@ In the Philippines, earthquakes remain one of the most destructive natural disas
 1. **ShakeAlert®** – Developed by the U.S. Geological Survey (USGS) as an early earthquake warning system for the United States, detecting ground motion and issuing alerts when strong shaking is imminent. While its strength lies in speed and accuracy in U.S. contexts, its limitation is that it is designed for U.S. fault systems and lacks localization for the Philippines (USGS, 2022).
 
 ## Proposed Solution
-1. **EarthSafe GIS Analyzer** – A web & mobile application tailored for Philippine conditions, integrating GIS layers (soil type, fault lines), local seismic history, and building-information to identify earthquake-prone zones. It assists engineers, planners, and local government units (LGUs) to make data-driven decisions (e.g., retrofitting, restricting construction in high-risk zones).
+1. **EarthSafe GIS Analyzer** – A web & mobile application tailored for Philippine conditions, integrating GIS layers (soil type, fault lines), local seismic history, and building-information to identify earthquake prone zones. It assists engineers, planners, and local government units (LGUs) to make data-driven decisions (e.g., retrofitting, restricting construction in high-risk zones).
 
 ```mermaid
 ---
@@ -35,7 +35,7 @@ If risk is High → the system recommends detailed mitigation actions (e.g., ret
 If risk is Moderate → the system suggests monitoring and inspection actions
 
 If risk is Low → the site is flagged safe under current conditions and stored in a safe-zone database.
-A report is generated for LGUs/planners to prioritise mitigation and budget allocation addressing the gap that many existing solutions have: lack of localized hazard-mapping tools combined with building data for mitigation planning.
+A report is generated for LGUs/planners to prioritise mitigation and budget allocation addressing the gap that many existing solutions have: lack of localized hazard mapping tools combined with building data for mitigation planning.
 
 ## Application of Data Structures
 The system uses a graph data structure to model spatial relationships between geographic entities buildings, roads, fault lines, soil zones. Each node represents a location (e.g., a building or a fault segment) and each edge represents a spatial relationship (e.g., distance, adjacency, vulnerability linkage).
