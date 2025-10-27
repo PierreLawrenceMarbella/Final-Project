@@ -1,4 +1,4 @@
-# Final-Project-Proposal
+# Final Project Proposal
 
 ## Target Problem
 In the Philippines, earthquakes remain one of the most destructive natural disasters due to the country’s position along the Pacific “Ring of Fire.” Communities, especially in densely populated cities like Metro Manila and Davao, are highly vulnerable because many structures are old or non-compliant with updated seismic standards. The lack of strict enforcement of the National Building Code and limited risk awareness further increase vulnerability to catastrophic losses and long-term displacement. Strengthening mitigation efforts through improved building-code compliance, seismic retrofitting, and localized hazard mapping is crucial for reducing casualties and property damage during earthquakes (Nepomuceno, 2024) (World Bank, 2016).
