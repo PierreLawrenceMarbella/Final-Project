@@ -7,7 +7,7 @@ In the Philippines, earthquakes remain one of the most destructive natural disas
 1. **ShakeAlert®** – Developed by the U.S. Geological Survey (USGS) as an early earthquake warning system for the United States, detecting ground motion and issuing alerts when strong shaking is imminent. While its strength lies in speed and accuracy in U.S. contexts, its limitation is that it is designed for U.S. fault systems and lacks localization for the Philippines (USGS, 2022).
 
 ## Proposed Solution
-1. **EarthSafe GIS Analyzer** – A web & mobile application tailored for Philippine conditions, integrating GIS layers (soil type, fault lines), local seismic history, and building-information to identify earthquake prone zones. It assists engineers, planners, and local government units (LGUs) to make data-driven decisions (e.g., retrofitting, restricting construction in high-risk zones).
+1. **EarthSafe GIS Analyzer** – A web & mobile application tailored for Philippine conditions, integrating GIS layers (soil type, fault lines), local seismic history, and building information to identify earthquake prone zones. It assists engineers, planners, and local government units (LGUs) to make data-driven decisions (e.g., retrofitting, restricting construction in high-risk zones).
 
 ```mermaid
 ---
