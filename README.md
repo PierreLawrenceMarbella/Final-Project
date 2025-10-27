@@ -39,7 +39,7 @@ A report is generated for LGUs/planners to prioritise mitigation and budget allo
 
 ## Application of Data Structures
 The system uses a graph data structure to model spatial relationships between geographic entities buildings, roads, fault lines, soil zones. Each node represents a location (e.g., a building or a fault segment) and each edge represents a spatial relationship (e.g., distance, adjacency, vulnerability linkage).
-This graph enables efficient queries such as: “Which buildings lie within X km of a major fault?” or “What is the shortest path of vulnerability from fault zone to hospital?” By representing infrastructure and hazard‐networks as a graph, the system can rapidly analyse how seismic risk propagates through interconnected nodes thus solving limitations of current apps that lack advanced spatial‐relationship analysis.
+This graph enables efficient queries such as: “Which buildings lie within X km of a major fault?” or “What is the shortest path of vulnerability from fault zone to hospital?” By representing infrastructure and hazard networks as a graph, the system can rapidly analyse how seismic risk propagates through interconnected nodes thus solving limitations of current apps that lack advanced spatial relationship analysis.
 
 ## References
 1. Nepomuceno, P. (2024, April 8). Engineering solutions, Building Code vital in quake preparedness. Site Name. https://www.pna.gov.ph/articles/1222212
