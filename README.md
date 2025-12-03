@@ -35,6 +35,7 @@ If risk is High → the system recommends detailed mitigation actions (e.g., ret
 If risk is Moderate → the system suggests monitoring and inspection actions
 
 If risk is Low → the site is flagged safe under current conditions and stored in a safe-zone database.
+
 A report is generated for LGUs/planners to prioritise mitigation and budget allocation addressing the gap that many existing solutions have: lack of localized hazard mapping tools combined with building data for mitigation planning.
 
 ## Application of Data Structures
