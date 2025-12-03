@@ -149,6 +149,78 @@
   font-weight: bold;
 }
 
+.evacuation-advisory {
+  margin-top: 15px;
+  padding: 12px;
+  border-left: 4px solid;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.evacuation-status {
+  margin: 0 0 8px 0;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.evacuation-rec {
+  margin: 0;
+  font-size: 0.95em;
+  color: #333;
+  line-height: 1.4;
+}
+
+.safe-areas-panel {
+  background: #e8f5e9;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #44ff44;
+  margin-top: 20px;
+}
+
+.safe-areas-panel h3 {
+  margin-top: 0;
+  color: #2e7d32;
+  font-size: 1.1em;
+}
+
+.safe-areas-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.safe-area-item {
+  background: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-left: 3px solid #44ff44;
+}
+
+.safe-area-item:hover {
+  background: #f1f8f6;
+  box-shadow: 0 2px 5px rgba(68, 255, 68, 0.2);
+}
+
+.safe-area-item p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #1b5e20;
+}
+
+.safe-area-item p strong {
+  color: #2e7d32;
+  font-size: 1em;
+}
+
+.safe-area-item .distance {
+  color: #558b2f;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;

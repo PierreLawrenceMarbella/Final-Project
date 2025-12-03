@@ -11,6 +11,9 @@ function App() {
     { id: 4, name: 'Pasig General Hospital', lat: 14.5769, lng: 121.0852, riskLevel: 'Moderate' },
     { id: 5, name: 'Cainta Fault Zone', lat: 14.5789, lng: 121.1945, riskLevel: 'High' },
     { id: 6, name: 'Marikina Business District', lat: 14.6396, lng: 121.0900, riskLevel: 'Moderate' },
+    { id: 7, name: 'Antipolo Evacuation Center', lat: 14.5786, lng: 121.1758, riskLevel: 'Low' },
+    { id: 8, name: 'Rodriguez Community Shelter', lat: 14.7289, lng: 121.1158, riskLevel: 'Low' },
+    { id: 9, name: 'Montalban Regional Hospital', lat: 14.7289, lng: 121.0820, riskLevel: 'Low' },
   ]);
   const [edges, setEdges] = useState([
     { from: 1, to: 2, label: '7.5km' },
@@ -20,6 +23,10 @@ function App() {
     { from: 3, to: 6, label: '3.2km' },
     { from: 4, to: 6, label: '6.1km' },
     { from: 5, to: 4, label: '12.5km' },
+    { from: 5, to: 7, label: '2.8km' },
+    { from: 7, to: 8, label: '18.5km' },
+    { from: 3, to: 9, label: '22.1km' },
+    { from: 4, to: 9, label: '19.3km' },
   ]);
   const [selectedLocation, setSelectedLocation] = useState(locations[0]);
 
@@ -63,6 +70,44 @@ function App() {
     return null;
   };
 
+  const getEvacuationStatus = (location) => {
+    if (location.riskLevel === 'High') {
+      return {
+        status: 'EVACUATE IMMEDIATELY',
+        color: '#ff4444',
+        recommendation: 'This is a high-risk zone. Evacuate to a safe location now.'
+      };
+    }
+
+    // Find nearby high-risk locations
+    const connectedHighRisk = edges
+      .filter(edge => (edge.from === location.id || edge.to === location.id))
+      .map(edge => edge.from === location.id ? edge.to : edge.from)
+      .some(id => locations.find(loc => loc.id === id && loc.riskLevel === 'High'));
+
+    if (location.riskLevel === 'Moderate' && connectedHighRisk) {
+      return {
+        status: 'PREPARE TO EVACUATE',
+        color: '#ffaa00',
+        recommendation: 'Located near high-risk zones. Stay alert and prepare evacuation routes.'
+      };
+    }
+
+    if (location.riskLevel === 'Moderate') {
+      return {
+        status: 'MONITOR SITUATION',
+        color: '#ffaa00',
+        recommendation: 'Moderate risk. Keep emergency supplies ready and monitor updates.'
+      };
+    }
+
+    return {
+      status: 'SAFE ZONE',
+      color: '#44ff44',
+      recommendation: 'Low risk area. May be used as shelter or evacuation destination.'
+    };
+  };
+
   return (
     <div className="app">
       <header className="header">
@@ -83,14 +128,44 @@ function App() {
             <p>Locations: <strong>{locations.length}</strong></p>
             <p>Connections: <strong>{edges.length}</strong></p>
             
-            {selectedLocation && (
+          {selectedLocation && (
               <div className="location-details">
                 <h4>{selectedLocation.name}</h4>
                 <p>Lat: {selectedLocation.lat.toFixed(2)}</p>
                 <p>Lng: {selectedLocation.lng.toFixed(2)}</p>
                 <p>Risk Level: <span className={`risk-${selectedLocation.riskLevel.toLowerCase()}`}>{selectedLocation.riskLevel}</span></p>
+                
+                {(() => {
+                  const evacStatus = getEvacuationStatus(selectedLocation);
+                  return (
+                    <div className="evacuation-advisory" style={{ borderLeftColor: evacStatus.color }}>
+                      <p className="evacuation-status" style={{ color: evacStatus.color }}>
+                        🚨 {evacStatus.status}
+                      </p>
+                      <p className="evacuation-rec">{evacStatus.recommendation}</p>
+                    </div>
+                  );
+                })()}
               </div>
             )}
+          </div>
+
+          <div className="safe-areas-panel">
+            <h3>✅ Safe Areas</h3>
+            <div className="safe-areas-list">
+              {locations
+                .filter(loc => loc.riskLevel === 'Low')
+                .map(loc => (
+                  <div 
+                    key={loc.id} 
+                    className="safe-area-item"
+                    onClick={() => setSelectedLocation(loc)}
+                  >
+                    <p><strong>{loc.name}</strong></p>
+                    <p className="distance">Safe evacuation destination</p>
+                  </div>
+                ))}
+            </div>
           </div>
         </aside>
 
