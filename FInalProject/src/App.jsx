@@ -23,7 +23,7 @@ function App() {
     { from: 3, to: 6, label: '3.2km' },
     { from: 4, to: 6, label: '6.1km' },
     { from: 5, to: 4, label: '12.5km' },
-    { from: 5, to: 7, label: '2.8km' },
+    { from: 5, to: 7, label: '24.8km' },
     { from: 7, to: 8, label: '18.5km' },
     { from: 3, to: 9, label: '22.1km' },
     { from: 4, to: 9, label: '19.3km' },
