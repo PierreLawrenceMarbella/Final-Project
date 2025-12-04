@@ -69,7 +69,3 @@ npm run build
 - Real-time earthquake data integration
 - GIS layer integration
 - Export reports for LGUs (Local Government Units)
-
-## Related Project
-
-This MVP is based on the **EarthSafe GIS Analyzer** proposal for earthquake disaster mitigation in the Philippines.
